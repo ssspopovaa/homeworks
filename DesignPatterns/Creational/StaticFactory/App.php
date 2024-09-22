@@ -9,9 +9,14 @@ class App
 {
     public function sendMessage()
     {
-        (new MessageStaticFactory())->build('email')->sendMessage();
-        (new MessageStaticFactory())->build('sms')->sendMessage();
+        MessageStaticFactory::build('email')->sendMessage();
+        MessageStaticFactory::build('sms')->sendMessage();
     }
 }
 
-(new App())->sendMessage();
+try {
+    (new App())->sendMessage();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+

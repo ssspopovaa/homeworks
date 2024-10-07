@@ -20,9 +20,4 @@ services:
       - MONGO_INITDB_DATABASE=homework
     volumes:
       - ./docker-assets/mongo/data:/home/mongo
-#      - ./docker-assets/mongo/data:/docker-entrypoint-initdb.d
-#    volumes:
-#        - ./mongorestore.sh:/docker-entrypoint-initdb.d/mongorestore.sh
-#        - ./docker-assets/mongo/data/homework:/homework
-
-#    command: [".home/mongo/mongo_restore.sh"]
+      - ./docker-assets/mongo/scripts:/docker-entrypoint-initdb.d/

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"homework.comments"},{"v":2,"key":{"blog_id":1},"name":"blog_id_1","ns":"homework.comments"}],"uuid":"dfc6da25073c46e881b13a6c4dd6bc6c"}

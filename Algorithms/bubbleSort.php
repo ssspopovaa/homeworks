@@ -1,5 +1,30 @@
 <?php
 
+// previous version
+//function bubbleSort(array &$array)
+//{
+//    $maxIndex = count($array) - 1;
+//    $needToRepeat = false;
+//
+//    $i = 0;
+//    while ($i < $maxIndex) {
+//        if ($array[$i] > $array[$i + 1]) {
+//            $higherValue = $array[$i + 1];
+//            $array[$i + 1] = $array[$i];
+//            $array[$i] = $higherValue;
+//            $needToRepeat = true;
+//        }
+//
+//        $i++;
+//    }
+//
+//    if ($needToRepeat) {
+//        bubbleSort($array);
+//    } else {
+//        return $array;
+//    }
+//}
+
 function bubbleSort(array $array, $n = null)
 {
     if ($n === null) {

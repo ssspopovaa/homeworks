@@ -1,27 +1,24 @@
 <?php
 
-function bubbleSort(array &$array)
+function bubbleSort(array $array, $n = null)
 {
-    $maxIndex = count($array) - 1;
-    $needToRepeat = false;
-
-    $i = 0;
-    while ($i < $maxIndex) {
-        if ($array[$i] > $array[$i + 1]) {
-            $higherValue = $array[$i + 1];
-            $array[$i + 1] = $array[$i];
-            $array[$i] = $higherValue;
-            $needToRepeat = true;
-        }
-
-        $i++;
+    if ($n === null) {
+        $n = count($array);
     }
 
-    if ($needToRepeat) {
-        bubbleSort($array);
-    } else {
+    if ($n == 1) {
         return $array;
     }
+
+    for ($i = 0; $i < $n - 1; $i++) {
+        if ($array[$i] > $array[$i + 1]) {
+            $temp = $array[$i];
+            $array[$i] = $array[$i + 1];
+            $array[$i + 1] = $temp;
+        }
+    }
+
+    return bubbleSort($array, $n - 1);
 }
 
 $array = [
@@ -30,5 +27,4 @@ $array = [
 
 print_r($array);
 echo PHP_EOL;
-bubbleSort($array);
-print_r($array);
+print_r(bubbleSort($array));

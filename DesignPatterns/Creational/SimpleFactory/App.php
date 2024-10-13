@@ -1,6 +1,7 @@
 <?php
 
 require ('MessengerInterface.php');
+require ('MessageFactoryInterface.php');
 require('MessageSimpleFactory.php');
 require ('EmailMessenger.php');
 require ('SmsMessenger.php');

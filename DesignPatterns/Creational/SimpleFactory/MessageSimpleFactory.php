@@ -1,8 +1,8 @@
 <?php
 
-class MessageSimpleFactory
+class MessageSimpleFactory implements MessageFactoryInterface
 {
-    public function build(string $type)
+    public function build(string $type): MessengerInterface
     {
         switch ($type) {
             case 'email':
@@ -10,7 +10,7 @@ class MessageSimpleFactory
             case 'sms':
                 return new SmsMessenger();
             default:
-                throw new Exception('Messenger not found');
+                throw new Exception('Messenger not found for type: ' . $type);
         }
     }
 }

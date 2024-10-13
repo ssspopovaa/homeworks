@@ -1,6 +1,6 @@
 <?php
 
-class EmailMessenger
+class EmailMessenger implements MessengerInterface
 {
     public function sendMessage(): void
     {

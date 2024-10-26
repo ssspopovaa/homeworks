@@ -1,17 +1,15 @@
 <?php
 
 require ('MessengerInterface.php');
-require ('MessageFactoryInterface.php');
 require('MessageSimpleFactory.php');
 require ('EmailMessenger.php');
 require ('SmsMessenger.php');
 
 class App
 {
-    public function sendMessage($type)
+    public function sendMessage($type): void
     {
-        $factory = new MessageSimpleFactory();
-        $factory->build($type)->sendMessage();
+        (new MessageSimpleFactory())->build($type)->sendMessage();
     }
 }
 

@@ -12,7 +12,7 @@ class App
      * @return void
      * @throws Exception
      */
-    public function sendMessage(string $type)
+    public function sendMessage(string $type): void
     {
         MessageStaticFactory::build($type)->sendMessage();
     }

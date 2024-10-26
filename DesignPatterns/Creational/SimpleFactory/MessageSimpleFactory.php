@@ -1,6 +1,6 @@
 <?php
 
-class MessageSimpleFactory implements MessageFactoryInterface
+class MessageSimpleFactory
 {
     public function build(string $type): MessengerInterface
     {

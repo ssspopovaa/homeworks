@@ -2,7 +2,7 @@
 
 class MessageStaticFactory
 {
-    public static function build(string $type)
+    public static function build(string $type): MessengerInterface
     {
         return match ($type) {
             'email' => new EmailMessenger(),

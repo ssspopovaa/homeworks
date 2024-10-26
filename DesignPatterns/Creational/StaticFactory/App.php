@@ -7,15 +7,19 @@ require ('SmsMessenger.php');
 
 class App
 {
-    public function sendMessage()
+    /**
+     * @param string $type
+     * @return void
+     * @throws Exception
+     */
+    public function sendMessage(string $type)
     {
-        MessageStaticFactory::build('email')->sendMessage();
-        MessageStaticFactory::build('sms')->sendMessage();
+        MessageStaticFactory::build($type)->sendMessage();
     }
 }
 
 try {
-    (new App())->sendMessage();
+    (new App())->sendMessage('email');
 } catch (Exception $e) {
     echo $e->getMessage();
 }

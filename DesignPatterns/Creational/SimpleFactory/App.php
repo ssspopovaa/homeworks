@@ -8,15 +8,15 @@ require ('SmsMessenger.php');
 
 class App
 {
-    public function sendMessage()
+    public function sendMessage($type)
     {
-        (new MessageSimpleFactory())->build('email')->sendMessage();
-        (new MessageSimpleFactory())->build('sms')->sendMessage();
+        $factory = new MessageSimpleFactory();
+        $factory->build($type)->sendMessage();
     }
 }
 
 try {
-    (new App())->sendMessage();
+    (new App())->sendMessage('sms');
 } catch (Exception $e) {
     echo $e->getMessage();
 }

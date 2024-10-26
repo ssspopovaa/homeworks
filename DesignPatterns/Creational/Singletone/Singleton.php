@@ -9,6 +9,8 @@ class Connection
 
 $connection = Connection::getInstance();
 
-echo '<pre>';
-var_dump($connection);
-die();
+try {
+    $connection1 = Connection::getInstance();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
